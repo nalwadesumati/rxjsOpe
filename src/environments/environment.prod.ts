@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  product_url: 'https://dummyjson.com/products/search',
+  carts_url: 'https://dummyjson.com/carts',
 };

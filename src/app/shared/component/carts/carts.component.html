@@ -1,0 +1,42 @@
+<div class="container mt-4">
+
+    <input type="text" class="form-control" placeholder="Search cart..." [formControl]="searchControl" />
+
+</div>
+
+<div class="container mt-4">
+
+    <div class="row">
+
+        <div class="col-md-4 mb-3" *ngFor="let cart of filteredCarts">
+
+            <mat-card>
+
+                <mat-card-title class="product-title">
+                    {{ cart.products[0]?.title }}
+                </mat-card-title>
+
+                <mat-card-subtitle>
+                    Cart ID: {{ cart.id }}
+                </mat-card-subtitle>
+
+
+                <img mat-card-image [src]="cart.products[0]?.thumbnail" alt="product image" />
+
+                <mat-card-content>
+
+                    <p><b>Total Products:</b> {{ cart.totalProducts }}</p>
+
+                    <p><b>Total Quantity:</b> {{ cart.totalQuantity }}</p>
+
+                    <p><b>Total Price:</b> {{ cart.total | currency:'INR' }}</p>
+
+                </mat-card-content>
+
+            </mat-card>
+
+        </div>
+
+    </div>
+
+</div>
