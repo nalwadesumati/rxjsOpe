@@ -1,0 +1,41 @@
+<div class="posts-container mt-4">
+
+
+    <div class="search-box mb-4">
+        <input type="text" class="form-control" placeholder="Search posts..." [formControl]="searchControl" />
+    </div>
+
+
+    <div class="posts-grid">
+
+        <div class="post-card" *ngFor="let post of filteredPosts; trackBy: trackByPostId">
+
+            <h3 class="post-title">{{ post.title }}</h3>
+
+            <div class="card-body">
+                <p class="post-body">
+                    {{ post.body }}
+                </p>
+
+                <div class="tags">
+                    <span class="tag" *ngFor="let tag of post.tags">
+                        #{{ tag }}
+                    </span>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="post-stats">
+                    <span>👍 {{ post.reactions.likes }}</span>
+                    <span>👎 {{ post.reactions.dislikes }}</span>
+                    <span>👁️ {{ post.views }}</span>
+                </div>
+
+                <button class="view-btn">View Post</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

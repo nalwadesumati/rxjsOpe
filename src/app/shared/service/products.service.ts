@@ -11,6 +11,6 @@ export class ProductsService {
   constructor(private _http: HttpClient) {}
 
   getProducts(query: string): Observable<any> {
-    return this._http.get(`${this.PRODUCT_URL}?q=${query}`);
+    return this._http.get(this.PRODUCT_URL);
   }
 }

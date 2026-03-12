@@ -1,30 +1,36 @@
 <div class="container mt-4">
 
-    <input type="text" class="form-control" placeholder="Search product..." [formControl]="searchControl" />
+    <!-- Search Box -->
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Search product..." [formControl]="searchControl" />
+        </div>
+    </div>
 
-</div>
-
-<div class="container mt-4">
-
+    <!-- Product Cards -->
     <div class="row">
 
-        <div class="col-md-4 mb-3" *ngFor="let p of products; trackBy: trackByProductId">
+        <div class="col-md-4 mb-3" *ngFor="let p of filteredProducts; trackBy: trackByProductId">
 
-            <mat-card>
+            <mat-card class="product-card">
 
-                <mat-card-title class="product-title">
-                    {{ p.title }}
-                </mat-card-title>
+                <mat-card-header>
+                    <mat-card-title class="product-title">
+                        {{ p.title }}
+                    </mat-card-title>
 
-                <mat-card-subtitle>
-                    {{ p.category }}
-                </mat-card-subtitle>
+                    <mat-card-subtitle>
+                        {{ p.category }}
+                    </mat-card-subtitle>
+                </mat-card-header>
 
-                <img mat-card-image [src]="p.thumbnail" />
+                <img mat-card-image [src]="p.thumbnail" alt="product image" />
 
                 <mat-card-content>
-                    <p>{{ p.description }}</p>
-                    <p><b>Price:</b> {{ p.price | currency:'INR' }}</p>
+                    <p class="product-desc">{{ p.description }}</p>
+                    <p class="product-price">
+                        <b>Price:</b> {{ p.price | currency:'INR' }}
+                    </p>
                 </mat-card-content>
 
             </mat-card>

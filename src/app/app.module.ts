@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './shared/component/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PostsComponent } from './shared/component/posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductsComponent,
     CartsComponent,
     HomeComponent,
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
