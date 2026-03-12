@@ -12,6 +12,9 @@ export class CartsComponent implements OnInit {
   carts: any[] = [];
   filteredCarts: any[] = [];
 
+  trackByCartId(index: number, cart: any) {
+    return cart.id;
+  }
   searchControl = new FormControl('');
   constructor(private _cartService: CartsService) {}
 

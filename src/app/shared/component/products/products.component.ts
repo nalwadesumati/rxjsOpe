@@ -11,7 +11,9 @@ import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs';
 export class ProductsComponent implements OnInit {
   products: any[] = [];
   searchControl = new FormControl('');
-
+  trackByProductId(index: number, product: any) {
+    return product.id;
+  }
   constructor(private _productService: ProductsService) {}
 
   ngOnInit(): void {
